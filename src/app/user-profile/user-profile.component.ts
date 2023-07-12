@@ -28,7 +28,7 @@ export class UserProfileComponent {
 
   constructor(
     public fetchApiData: FetchApiDataService,
-    public dialogRef: MatDialogRef<UserProfileComponent>,
+    //public dialogRef: MatDialogRef<UserProfileComponent>,
     public snackBar: MatSnackBar,
     private router: Router
   ) { }

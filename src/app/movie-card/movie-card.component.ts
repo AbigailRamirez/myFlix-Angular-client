@@ -25,6 +25,13 @@ export class MovieCardComponent {
     this.getMovies();
   }
 
+   /**
+   * This method will get all movies from the database
+   * @param void
+   * @returns movies array
+   * @memberof MovieCardComponent
+   * @see FetchApiDataService.getAllMovies()
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
         this.movies = resp;
@@ -33,6 +40,16 @@ export class MovieCardComponent {
       });
   }
 
+/**
+ * 
+ * @param name 
+ * @param description
+ * @returns void
+ * @memberof MovieCardComponent
+ * @see MovieInfoComponent
+ * @example openGenre()
+ * @example openDirector() 
+ */
   openGenre(name: string, description: string): void {
     this.dialog.open(MovieInfoComponent, {
       data: {
@@ -72,6 +89,14 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * 
+   * @param id 
+   * @memberof MovieCardComponent
+   * @see FetchApiDataService.isFavoriteMovie()
+   * @example isFavorite()
+   * @example removeFavorite()
+   */
   isFavorite(id: string): boolean {
     return this.fetchApiData.isFavoriteMovie(id);
   }
